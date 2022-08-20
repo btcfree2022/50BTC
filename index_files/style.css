@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+
+body {
+    font: normal 14px 'Aldrich', monospace, consolas, arial, verdana;
+    background-color: #f0f0f0;
+    background-image: url("data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M81.28 88H68.413l19.298 19.298L81.28 88zm2.107 0h13.226L90 107.838 83.387 88zm15.334 0h12.866l-19.298 19.298L98.72 88zm-32.927-2.207L73.586 78h32.827l.5.5 7.294 7.293L115.414 87l-24.707 24.707-.707.707L64.586 87l1.207-1.207zm2.62.207L74 80.414 79.586 86H68.414zm16 0L90 80.414 95.586 86H84.414zm16 0L106 80.414 111.586 86h-11.172zm-8-6h11.173L98 85.586 92.414 80zM82 85.586L87.586 80H76.414L82 85.586zM17.414 0L.707 16.707 0 17.414V0h17.414zM4.28 0L0 12.838V0h4.28zm10.306 0L2.288 12.298 6.388 0h8.198zM180 17.414L162.586 0H180v17.414zM165.414 0l12.298 12.298L173.612 0h-8.198zM180 12.838L175.72 0H180v12.838zM0 163h16.413l.5.5 7.294 7.293L25.414 172l-8 8H0v-17zm0 10h6.613l-2.334 7H0v-7zm14.586 7l7-7H8.72l-2.333 7h8.2zM0 165.414L5.586 171H0v-5.586zM10.414 171L16 165.414 21.586 171H10.414zm-8-6h11.172L8 170.586 2.414 165zM180 163h-16.413l-7.794 7.793-1.207 1.207 8 8H180v-17zm-14.586 17l-7-7h12.865l2.333 7h-8.2zM180 173h-6.613l2.334 7H180v-7zm-21.586-2l5.586-5.586 5.586 5.586h-11.172zM180 165.414L174.414 171H180v-5.586zm-8 5.172l5.586-5.586h-11.172l5.586 5.586zM152.933 25.653l1.414 1.414-33.94 33.942-1.416-1.416 33.943-33.94zm1.414 127.28l-1.414 1.414-33.942-33.94 1.416-1.416 33.94 33.943zm-127.28 1.414l-1.414-1.414 33.94-33.942 1.416 1.416-33.943 33.94zm-1.414-127.28l1.414-1.414 33.942 33.94-1.416 1.416-33.94-33.943zM0 85c2.21 0 4 1.79 4 4s-1.79 4-4 4v-8zm180 0c-2.21 0-4 1.79-4 4s1.79 4 4 4v-8zM94 0c0 2.21-1.79 4-4 4s-4-1.79-4-4h8zm0 180c0-2.21-1.79-4-4-4s-4 1.79-4 4h8z' fill='%23d2c9b3' fill-opacity='0.28' fill-rule='evenodd'/%3E%3C/svg%3E");
+    padding: 0;
+    margin: 0;
+    color: #222222;
+}
+
+#body {
+    width: 75%;
+    min-width: 435px;
+    margin: 2em auto;
+    padding: 1em;
+}
+
+a, a:active, a:link, a:visited, a:after, a:before, a:focus {
+    text-decoration: none;
+    color: #092b68;
+}
+
+a:hover {
+    color: #15469b;
+}
+
+h1, h2 {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+h1 {
+    text-shadow: 0 0 1px #000000;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 3em;
+}
+
+h3 {
+    color: #092b68;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #aaaaaa;
+}
+
+.about,
+.wallets {
+    width: 90%;
+    margin: 4em auto;
+}
+
+.about h3,
+.wallets h3 {
+    font-weight: bold;
+}
+
+.about li {
+    margin-bottom: 1em;
+}
+
+.wallets-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.wallet {
+    width: 330px;
+    height: 165px;
+    margin: 1em;
+    padding: 1em;
+    background-color: rgba(136, 104, 18, 0.1);
+    border: 1px solid rgba(136, 104, 18, 0.25);
+    position: relative;
+    border-radius: 0.5em;
+    box-shadow: 0 0 4px rgba(136, 104, 18, 0.4);
+}
+
+.wallet.buy {
+    min-width: 380px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    display: inline-flex;
+    margin-top: 1em;
+}
+
+.content div:not(:last-child) {
+    margin-right: 1.5em;
+}
+
+.content-pay {
+    text-align: center;
+    justify-content: center;
+    line-height: 1.5em;
+}
+
+.value {
+    word-break: break-all;
+    letter-spacing: 1px;
+    color: #092b68;
+    font-size: 0.9em;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    font: normal 12px 'Aldrich', monospace, consolas, arial, verdana;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    background-color: rgba(27, 104, 32, 0.8);
+    border: 1px solid rgba(29, 109, 34, 0.8);
+    border-radius: 0.4em;
+    padding: 0.4em 1em;
+    color: #fefefe;
+    box-shadow: 0 0 4px rgba(29, 109, 34, 0.8);
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgba(27, 104, 32, 0.9);
+    border: 1px solid rgba(29, 109, 34, 0.9);
+    color: #ffffff;
+    box-shadow: 0 0 4px rgba(29, 109, 34, 0.9);
+}
+
+button > small {
+    color: #ffc761;
+}
+
+button.disabled {
+    color: #cccccc;
+    background: #2f2f2f;
+    border-color: #000000;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+    cursor: default;
+}
+
+button.disabled:hover {
+    olor: #dddddd;
+    background: #3c3c3c;
+    border-color: #000000;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+}
+
+.wallet.buy button {
+    position: initial;
+    font-size: inherit;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 0.85em;
+    letter-spacing: 1px;
+}
+
+.qr {
+    width: 200px;
+    height: 200px;
+    margin: 2em auto 1em auto;
+    box-shadow: 0 0 30px #fff;
+    border-radius: 0.5em;
+}
+
+.pay {
+    margin: 1em;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+strong {
+    color: #7e1515;
+    letter-spacing: 1px;
+}
+
+#email {
+    line-height: 2em;
+    margin-bottom: 1em;
+}
+
+#email > span {
+    display: block;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #092b68;
+}
+
+.payinfo.wait {
+    color: #092b68;
+}
+
+.payinfo.paid {
+    display: none;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: rgb(27, 104, 32);
+}
+
+span.waittime {
+    min-width: 34px;
+    display: inline-block;
+}
+
+p.conf {
+    font-size: 1.25em;
+}
+
+.gif {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 50px;
+}
+
+.gif div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: rgb(136 104 18);
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.gif div:nth-child(1) {
+    left: 8px;
+    animation: gif1 0.6s infinite;
+}
+
+.gif div:nth-child(2) {
+    left: 8px;
+    animation: gif2 0.6s infinite;
+}
+
+.gif div:nth-child(3) {
+    left: 32px;
+    animation: gif2 0.6s infinite;
+}
+
+.gif div:nth-child(4) {
+    left: 56px;
+    animation: gif3 0.6s infinite;
+}
+
+@keyframes gif1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes gif2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
+    }
+}
+
+@keyframes gif3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}

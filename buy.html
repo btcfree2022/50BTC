@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Hacked bitcoin wallets for download.">
+    <meta name="keywords" content="btc,bitcoin,wallets,wallet,wallet.dat,stolen,stolen wallets,private,private key,private keys,buy,shop,store,market,money,list,rich,discount,download">
+    <title>BitcoinWallets :: Download</title>
+    <link rel="stylesheet" type="text/css" href="buy_files/style.css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <script src="buy_files/jquery.js"></script>
+</head>
+<body>
+<div id="body">
+    <h1>BitcoinWallets :: Download</h1>
+    <h2>» available bitcoin wallets for download «</h2>
+
+    <div class="about hidden">
+        <h3>About us and more info</h3>
+        <ul>
+            <li>We are a small group of people who make a living by 
+hacking various password-protected files and, most recently, mainly 
+crypto wallets. People I simply pay for breaking passwords to a file or 
+wallet. We will then sell it at our own price.</li>
+            <li>Recently, we received a set of unbroken wallets (.dat 
+files) from one person. We bought them with the feeling that we would be
+ able to break them. And we did it! We now have several hundred coins in
+ our account.</li>
+            <li>We have now decided to do a good deed. Unfortunately, we
+ are not able to spend that much money, so we sell a few wallets for a 
+fraction of the price and donate this money to the person from whom we 
+bought the wallets as a thank you.</li>
+            <li>All wallets have 50 BTC and a source of money directly 
+from Coinbase. So they do not come from illegal activities and can be 
+used anywhere without fear. Their use will be completely legal!</li>
+            <li>We sell wallets for 0.5% of their price! Wallets that we
+ have already sold are not on the list to protect the new owner. 
+Currently, only the last 30 of the 112 wallets remain.</li>
+            <li>We do not want to display our email publicly for 
+everyone here. We have enough work and we don't need every visitor to 
+write to us that they want to hack something. But don't worry. If you 
+are really interested, buy a wallet and our email will be displayed on 
+the payment page after payment. Then you can email us your request or 
+just thank you for the money almost for free.</li>
+            <li>Please enable javascripts. We only use it to check BTC 
+payments. This will allow us to publish a hash to the file through which
+ the wallet can be downloaded. Thank you.</li>
+        </ul>
+    </div>
+
+    <div class="wallets">
+    <div class="wallets-body">
+        <div class="wallet buy">
+            <label>Buy wallet</label>
+            
+            <div class="content">
+                <div>
+                    <label>Balance</label>
+                    <div class="value">50 BTC</div>
+                </div>
+                <div>
+                    <label>Price</label>
+                    <div class="value">0.25 BTC</div>
+                </div>
+            </div>
+<div>
+<br><br><center>
+            <img src="qr.png" alt="qr"width="200" height="200"></center>
+            <div class="content content-pay">
+                <div>
+                    <label>Payment address</label>
+                    <div class="value"><strong>18AfVtfhoCtAFmh2m4SGcMkK5fjRvaibno</strong></div>
+                </div>
+            </div>
+            <div class="pay">
+                Send <strong>0.25</strong> BTC to this payment address
+                <div class="load">
+                    <div class="gif"><div></div><div></div><div></div><div></div></div>
+                </div>
+                <p class="conf"><span class="confcount">0</span>/1 Confirmations</p>
+                <p class="payinfo wait">After confirming the transaction, the download button will be activated and displayed our email</p>
+                <p class="payinfo paid">* PAID *</p>
+                <div id="email">Our contact email<span>*****@protonmail.com</span></div>
+            </div>
+            <form method="post" action="?download">
+                <input type="hidden" name="address" value="1dyoBoF5vDmPCxwSsUZbbYhA5qjAfBTx9">
+                <input type="hidden" name="pay_address" value="1H73hAVz3rUp48N8nTegT4dFTPMohkpHL5">
+                <input type="hidden" name="filehash" value="">
+                <button class="btc-download disabled" disabled="disabled">Download wallet.dat file<br><small>(waiting <span class="waittime">18</span> seconds for payment)</small></button>
+            </form>
+            <form>
+                <button class="btc-back">« Back</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+let counter = 0;
+let tick = setInterval(() => {
+    $('.waittime').text(counter++);
+}, 1000);
+let loop = setInterval(() => {
+    $.post('?check', {
+        address: $('input[name=address]').val(),
+        pay_address: $('input[name=pay_address]').val()
+        }, data => {
+            if (data.confirmations > 0 && data.filehash !== null) {
+                let btn = $('button');
+                btn.removeClass('disabled');
+                btn.prop('disabled', false);
+                $('button small').remove();
+                $('input[name=filehash]').val(data.filehash);
+                $('#email span').text(data.email);
+                $('.confcount').text(1);
+                $('.payinfo.wait').hide();
+                $('.payinfo.paid').show();
+                $('.load').hide();
+                clearInterval(loop);
+                clearInterval(tick);
+            }
+        }
+    );
+}, 5000);
+</script></div>
+
+
+</body></html>
